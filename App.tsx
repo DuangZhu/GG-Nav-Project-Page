@@ -491,7 +491,7 @@ function App() {
               </div>
               <div className="overview-actions" aria-label="Possible grounded actions">
                 <div className="decision-chip decision-chip--action">
-                  <span>Evidence &rarr; Action</span>
+                  <span>Evidence to Action</span>
                 </div>
                 <div className="decision-chip decision-chip--talk">
                   <span>&lt;talk&gt;</span>
