@@ -131,7 +131,7 @@ function SectionIntro({
   align = "left",
 }: {
   eyebrow: string;
-  title: string;
+  title: ReactNode;
   children: ReactNode;
   align?: "left" | "center";
 }) {
@@ -486,10 +486,13 @@ function App() {
               </div>
 
               <div className="decision-chip decision-chip--evidence">
-                <span>OBSERVATION → EVIDENCE</span>
+                <span>Observation → Evidence</span>
                 <strong>Tracked plant_0</strong>
               </div>
               <div className="overview-actions" aria-label="Possible grounded actions">
+                <div className="decision-chip decision-chip--action">
+                  <span>Evidence &rarr; Action</span>
+                </div>
                 <div className="decision-chip decision-chip--talk">
                   <span>&lt;talk&gt;</span>
                   <strong>
@@ -514,16 +517,6 @@ function App() {
                 />
               </div>
 
-              <div className="hero-visual__caption">
-                <span>01</span>
-                <p>
-                  Ground
-                  <br />
-                  Remember
-                  <br />
-                  Decide
-                </p>
-              </div>
             </div>
           </div>
 
@@ -538,11 +531,10 @@ function App() {
             <div>
               <SectionIntro
                 eyebrow="The motivation"
-                title="The target was already there. Why did the robot still fail?"
+                title="The robot has already seen the target. Why does it still fail to reach it?"
               >
                 <p>
-                  Seeing the target is not the same as using it to make the
-                  right navigation decision.
+                  Once a target is observed, the robot must continuously track it, navigate toward it, and stop nearby. However, end-to-end action generation alone may fail to preserve critical evidence across time, leading to unreliable decisions.
                 </p>
               </SectionIntro>
               <div className="motivation-insight" data-reveal>
@@ -558,7 +550,7 @@ function App() {
               <div className="failure-orbit__ring">
                 <div className="failure-orbit__center">
                   <strong>68%</strong>
-                  <span>target observed</span>
+                  <span>of failures</span>
                 </div>
               </div>
               <div className="failure-stat failure-stat--seen">
@@ -589,7 +581,7 @@ function App() {
           <div className="container">
             <SectionIntro
               eyebrow="Experiments"
-              title="One framework. Three benchmarks. Real-world transfer."
+              title="Two Tasks in Three Benchmarks"
             >
               <p>
                 GG-Nav consistently improves both ObjectNav and interactive
@@ -606,42 +598,15 @@ function App() {
                   key={result.benchmark}
                 >
                   <div className="benchmark-card__top">
-                    <span className="result-keyword">{result.benchmark}</span>
-                    <span className="benchmark-card__gain">
-                      {result.gain} SR gain
-                    </span>
+                    <span className="result-keyword">{result.benchmark} &mdash; {result.task}</span>
                   </div>
                   <div className="benchmark-card__score">
                     <strong>{result.score}</strong>
                     <span>{result.unit}</span>
                   </div>
-                  <p className="result-task">{result.task}</p>
                   <span className="benchmark-card__line" />
                 </article>
               ))}
-            </div>
-
-            <div className="mechanism-gains" data-reveal>
-              <article>
-                <span className="mechanism-gains__icon">
-                  <Icon name="eye" size={25} />
-                </span>
-                <div>
-                  <strong>−11.6%</strong>
-                  <p>evidence-missing failures</p>
-                </div>
-                <small>by accumulating intermediate observations</small>
-              </article>
-              <article>
-                <span className="mechanism-gains__icon">
-                  <Icon name="ground" size={25} />
-                </span>
-                <div>
-                  <strong>−49.4%</strong>
-                  <p>stopping errors</p>
-                </div>
-                <small>through explicit current-frame grounding</small>
-              </article>
             </div>
 
           </div>
@@ -651,32 +616,23 @@ function App() {
           <div className="container">
             <SectionIntro
               align="center"
-              eyebrow="Real-world case studies"
-              title="Four settings. One increasingly difficult search."
+              eyebrow="Real-world demos"
+              title={<>Four Exploration Settings<br />with Increasing Difficulty</>}
             >
               <p>
-                From category-level navigation to long-horizon instance
-                disambiguation, each case exposes a different grounding
-                challenge.
+                From Category-Level Navigation to Ambiguous Long-Horizon Instance Navigation
               </p>
             </SectionIntro>
 
             <div className="demo-grid">
-              {videos.slice(1).map((video) => (
+              {videos.slice(1).map((video, index) => (
                 <article className="demo-card" data-reveal key={video.id}>
                   <div className="demo-card__heading">
-                    <span>{video.eyebrow}</span>
-                    <h3>{video.title}</h3>
-                    <p>{video.subtitle}</p>
+                    <h3>Case {index + 1}: {video.title}</h3>
                   </div>
                   <VideoPlayer entry={video} />
                   <div className="demo-card__body">
                     <p>{video.description}</p>
-                    <div className="demo-card__facts">
-                      {video.facts.map((fact) => (
-                        <span key={fact}>{fact}</span>
-                      ))}
-                    </div>
                   </div>
                 </article>
               ))}
@@ -692,7 +648,7 @@ function App() {
               title="Cite GG-Nav"
             >
               <p>
-                Use the BibTeX entry below or contact us with questions.
+                If you find our work useful, please consider citing it.
               </p>
             </SectionIntro>
 

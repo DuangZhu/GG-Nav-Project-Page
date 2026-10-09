@@ -31,7 +31,7 @@ export const siteConfig = {
   title:
     "GG-Nav: Goal-oriented Grounding Chain-of-Thought Elicits Reasoning in Navigation Foundation Models",
   description:
-    "A structured grounding chain-of-thought that preserves transient visual evidence, explicitly localizes goal-relevant instances, and supports reliable navigation or clarification.",
+    "A structured grounding chain-of-thought that preserves transient visual evidence, explicitly localizes goal-relevant instances, and supports reliable action generation.",
   paperUrl: withBase("paper/GG-Nav.pdf"),
   codeUrl: "https://github.com/DuangZhu/GG-Nav",
   teaserUrl: withBase("assets/teaser.png"),
@@ -98,7 +98,7 @@ export const videos: VideoEntry[] = [
     title: "ObjectNav",
     subtitle: "Category-level navigation with precise stopping",
     description:
-      "Any sofa is a valid goal. GG-Nav turns transient observations into persistent evidence and reaches the target over an approximately 18 m real-world route.",
+      "Prompt: Search for sofa. Robot can only move.",
     src: new URL("./video/demo1_objectnav.mp4", import.meta.url).href,
     poster: withBase("assets/teaser.png"),
     posterPosition: "23% 88%",
@@ -110,7 +110,7 @@ export const videos: VideoEntry[] = [
     title: "Simple IIGN",
     subtitle: "Clarify the intended instance",
     description:
-      "The robot grounds nearby chairs, asks targeted clarification questions, preserves the confirmed identity, and stops at chair_3.",
+      "Prompt: Search for the sofa. Robot can move or talk.",
     src: new URL("./video/demo2_iign.mp4", import.meta.url).href,
     poster: withBase("assets/real-world.png"),
     posterPosition: "17% 50%",
@@ -122,7 +122,7 @@ export const videos: VideoEntry[] = [
     title: "IIGN with Target Disappearance",
     subtitle: "Remember a target after it leaves the observation",
     description:
-      "Starting inside a dense cluster of plants, GG-Nav tracks candidate identities and eliminates distractors through grounded interaction.",
+      "Prompt: Search for the plant. Robot can move or talk.",
     src: new URL("./video/demo3_iign.mp4", import.meta.url).href,
     poster: withBase("assets/real-world.png"),
     posterPosition: "82% 50%",
@@ -134,7 +134,7 @@ export const videos: VideoEntry[] = [
     title: "Long-Horizon IIGN",
     subtitle: "Preserve grounded evidence over a long journey",
     description:
-      "Across a long route and repeated interactions, GG-Nav preserves grounded evidence, rejects earlier candidates, and reaches table_5.",
+      "Prompt: Search for the table. Robot can move or talk.",
     src: new URL("./video/demo4_iign.mp4", import.meta.url).href,
     poster: withBase("assets/teaser.png"),
     posterPosition: "79% 86%",
@@ -153,7 +153,7 @@ export const benchmarkResults = [
   },
   {
     benchmark: "VL-LN",
-    task: "Interactive InstanceNav",
+    task: "IIGN",
     score: "42.0",
     unit: "% SR",
     gain: "+16.6",
@@ -161,7 +161,7 @@ export const benchmarkResults = [
   },
   {
     benchmark: "CoIN",
-    task: "All evaluation splits",
+    task: "IIGN",
     score: "SOTA",
     unit: "overall",
     gain: "+5.3",
