@@ -480,9 +480,6 @@ function App() {
                     <i>plant_3</i>
                   </span>
                 </div>
-                <span className="observation-card__status observation-card__status--active">
-                  <span className="live-dot" /> 2 instances grounded
-                </span>
               </div>
 
               <div className="decision-chip decision-chip--evidence">
@@ -491,7 +488,7 @@ function App() {
               </div>
               <div className="overview-actions" aria-label="Possible grounded actions">
                 <div className="decision-chip decision-chip--action">
-                  <span>Evidence to Action</span>
+                  <span>Evidence &rarr; Action</span>
                 </div>
                 <div className="decision-chip decision-chip--talk">
                   <span>&lt;talk&gt;</span>
