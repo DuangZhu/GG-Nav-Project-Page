@@ -32,8 +32,8 @@ export const siteConfig = {
     "GG-Nav: Goal-oriented Grounding Chain-of-Thought Elicits Reasoning in Navigation Foundation Models",
   description:
     "A structured grounding chain-of-thought that preserves transient visual evidence, explicitly localizes goal-relevant instances, and supports reliable action generation.",
-  paperUrl: withBase("paper/GG-Nav.pdf"),
-  codeUrl: "https://github.com/DuangZhu/GG-Nav",
+  paperUrl: "https://arxiv.org/abs/2610.14541",
+  codeUrl: "https://github.com/DuangZhu/GG_Nav",
   teaserUrl: withBase("assets/teaser.png"),
   methodUrl: withBase("assets/method-framework.png"),
   caseStudyUrl: withBase("assets/case-study.png"),
@@ -50,7 +50,7 @@ export const siteConfig = {
     { name: "Meng Wei", affiliations: [2, 5] },
     { name: "Chenyang Wan", affiliations: [1, 2] },
     { name: "Tianle Liu", affiliations: [1] },
-    { name: "Tai Wang", affiliations: [2], mark: "†" },
+    { name: "Tai Wang", affiliations: [2], mark: "†*" },
     { name: "Jinming Xu", affiliations: [1], mark: "*" },
   ] satisfies Author[],
   affiliations: [
@@ -67,7 +67,11 @@ export const siteConfig = {
                   Yang, Yuqiang and Wei, Meng and Wan, Chenyang and
                   Liu, Tianle and Wang, Tai and Xu, Jinming},
   year         = {2026},
-  note         = {Preprint}
+  eprint       = {2610.14541},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.RO},
+  doi          = {10.48550/arXiv.2610.14541},
+  url          = {https://arxiv.org/abs/2610.14541}
 }`,
 };
 

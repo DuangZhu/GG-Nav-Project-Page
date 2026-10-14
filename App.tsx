@@ -386,6 +386,11 @@ function App() {
                 ))}
               </div>
 
+              <p className="author-notes">
+                <span><sup>*</sup> Corresponding author</span>
+                <span><sup>&dagger;</sup> Project lead</span>
+              </p>
+
               <div className="hero__actions">
                 <a
                   className="button button--primary"
@@ -406,9 +411,9 @@ function App() {
                   <Icon name="code" />
                   Code
                 </a>
-                <a className="button button--ghost" href="#method">
+                <a className="button button--ghost" href="#demos">
                   <Icon name="play" />
-                  Watch video
+                  Watch demo
                 </a>
                 <a
                   className="button button--ghost"
@@ -581,9 +586,16 @@ function App() {
               title="Two Tasks in Three Benchmarks"
             >
               <p>
-                GG-Nav consistently improves both ObjectNav and interactive
-                instance-goal navigation, with gains that trace directly back to
-                stronger evidence retention and explicit localization.
+                <strong>ObjectNav:</strong> Navigate to an instance of a specified
+                object category, evaluated on HM3D ObjectNav.
+                Example prompt: <q>Find a sofa.</q>
+              </p>
+              <p>
+                <strong>Interactive instance-goal navigation (IIGN):</strong> Navigate
+                to a target instance while asking clarification questions to resolve
+                ambiguity, evaluated on VL-LN and CoIN.
+                Example prompt: <q>Find the sofa.</q> The robot can ask
+                <q>Do you mean the sofa next to the window?</q> to identify the target.
               </p>
             </SectionIntro>
 
