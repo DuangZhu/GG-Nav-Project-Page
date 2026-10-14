@@ -599,8 +599,7 @@ function App() {
                 <strong>Interactive instance-goal navigation (IIGN):</strong> Navigate
                 to a target instance while asking clarification questions to resolve
                 ambiguity, evaluated on VL-LN and CoIN.
-                Example prompt: <q>Search for the sofa.</q> The robot can ask
-                <q>Do you mean the sofa next to the window?</q> to identify the target.
+                Example prompt: <q>Search for the sofa.</q>
               </p>
             </SectionIntro>
 
