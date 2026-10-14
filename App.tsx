@@ -586,15 +586,20 @@ function App() {
               title="Two Tasks in Three Benchmarks"
             >
               <p>
+                GG-Nav consistently improves both ObjectNav and interactive
+                instance-goal navigation, with gains that trace directly back to
+                stronger evidence retention and explicit localization.
+              </p>
+              <p>
                 <strong>ObjectNav:</strong> Navigate to an instance of a specified
                 object category, evaluated on HM3D ObjectNav.
-                Example prompt: <q>Find a sofa.</q>
+                Example prompt: <q>Search for sofa.</q>
               </p>
               <p>
                 <strong>Interactive instance-goal navigation (IIGN):</strong> Navigate
                 to a target instance while asking clarification questions to resolve
                 ambiguity, evaluated on VL-LN and CoIN.
-                Example prompt: <q>Find the sofa.</q> The robot can ask
+                Example prompt: <q>Search for the sofa.</q> The robot can ask
                 <q>Do you mean the sofa next to the window?</q> to identify the target.
               </p>
             </SectionIntro>
